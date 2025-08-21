@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="es" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO y Metadatos -->
+    <title>Contacto | Agenda tu fecha con terraaZac</title>
+    <meta name="description" content="Contáctanos para agendar tu fecha o cotizar un servicio. Encuéntranos en Zacatecas, listos para hacer tu evento inolvidable.">
+    <meta name="keywords" content="terraza zacatecas, renta terraza, revelacion de genero, letras gigantes, eventos zacatecas, marry me, quieres ser mi novia">
+     <link rel="canonical" href="https://www.terraazac.com/contacto.html"> <!-- Reemplazar con URL final -->
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.terraazac.com/contacto.html"> <!-- Reemplazar con URL final -->
+    <meta property="og:title" content="Contacto | Agenda tu fecha con terraaZac">
+    <meta property="og:description" content="Contáctanos para agendar tu fecha o cotizar un servicio. Encuéntranos en Zacatecas, listos para hacer tu evento inolvidable.">
+    <meta property="og:image" content="https://www.terraazac.com/assets/img/hero-terraza-01-dark.jpg"> <!-- Reemplazar con URL final -->
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.terraazac.com/contacto.html"> <!-- Reemplazar con URL final -->
+    <meta property="twitter:title" content="Contacto | Agenda tu fecha con terraaZac">
+    <meta property="twitter:description" content="Contáctanos para agendar tu fecha o cotizar un servicio. Encuéntranos en Zacatecas, listos para hacer tu evento inolvidable.">
+    <meta property="twitter:image" content="https://www.terraazac.com/assets/img/hero-terraza-01-dark.jpg"> <!-- Reemplazar con URL final -->
+
+    <!-- Favicon (placeholder) -->
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+    <!-- Preconnect y DNS-Prefetch para Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://www.youtube-nocookie.com">
+
+    <!-- Google Fonts: Manrope -->
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
+
+    <!-- AOS (Animate on Scroll) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Configuración en línea de Tailwind CSS -->
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              'brand-bg': '#0B0B0D',
+              'brand-surface-1': '#111217',
+              'brand-surface-2': '#171923',
+              'brand-accent-1': '#E84545', // Rojo cálido
+              'brand-accent-2': '#F5B301', // Ámbar
+              'brand-text-primary': '#F3F4F6',
+              'brand-text-secondary': '#B8BBC6',
+              'brand-border': 'rgba(255, 255, 255, 0.08)',
+            },
+            fontFamily: {
+              sans: ['Manrope', 'sans-serif'],
+            }
+          }
+        }
+      }
+    </script>
+
+    <!-- Estilos Globales Personalizados -->
+    <link rel="stylesheet" href="css/global.css">
+
+</head>
+<body class="bg-brand-bg text-brand-text-primary font-sans">
+
+    <!-- Skip to content link for accessibility -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:px-4 focus:py-2 focus:bg-brand-accent-2 focus:text-brand-bg">Saltar al contenido principal</a>
+
+    <!-- Header -->
+    <header id="main-header" class="fixed top-0 left-0 right-0 z-40 transition-all duration-300 ease-in-out">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- Logo -->
+            <a href="/" class="text-2xl font-bold text-brand-text-primary hover:text-brand-accent-2 transition-colors">
+                terraaZac
+            </a>
+
+            <!-- Navegación Desktop -->
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="/index.html" class="text-brand-text-primary hover:text-brand-accent-2 transition-colors">Inicio</a>
+                <a href="/servicios.html" class="text-brand-text-primary hover:text-brand-accent-2 transition-colors">Servicios</a>
+                <a href="/contacto.html" class="text-brand-text-primary hover:text-brand-accent-2 transition-colors">Contacto</a>
+                <a href="https://wa.me/5214922461907?text=Hola%20quiero%20reservar%20en%20terraaZac" target="_blank" rel="noopener noreferrer" class="bg-brand-accent-1 text-white px-5 py-2 rounded-full font-semibold hover:bg-opacity-90 transition-all">
+                    Reservar por WhatsApp
+                </a>
+            </div>
+
+            <!-- Botón Menú Móvil -->
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-brand-text-primary focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Menú Móvil (Off-canvas) -->
+        <div id="mobile-menu" class="hidden md:hidden fixed top-0 left-0 w-full h-full bg-brand-bg/95 backdrop-blur-lg">
+            <div class="flex justify-end p-6">
+                <button id="close-mobile-menu-button" class="text-brand-text-primary focus:outline-none">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+            </div>
+            <div class="flex flex-col items-center justify-center space-y-8 mt-16">
+                <a href="/index.html" class="text-2xl text-brand-text-primary hover:text-brand-accent-2 transition-colors">Inicio</a>
+                <a href="/servicios.html" class="text-2xl text-brand-text-primary hover:text-brand-accent-2 transition-colors">Servicios</a>
+                <a href="/contacto.html" class="text-2xl text-brand-text-primary hover:text-brand-accent-2 transition-colors">Contacto</a>
+                <a href="https://wa.me/5214922461907?text=Hola%20quiero%20reservar%20en%20terraaZac" target="_blank" rel="noopener noreferrer" class="mt-8 bg-brand-accent-1 text-white px-8 py-3 rounded-full font-semibold hover:bg-opacity-90 transition-all text-lg">
+                    Reservar por WhatsApp
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contenido Principal -->
+    <main id="main-content" class="pt-24 sm:pt-32">
+
+        <!-- Encabezado de la Página -->
+        <section class="container mx-auto px-6 text-center" data-aos="fade-up">
+            <h1 class="text-4xl md:text-5xl font-extrabold text-brand-text-primary">Contacto</h1>
+            <p class="mt-4 text-lg max-w-2xl mx-auto text-brand-text-secondary">¿Listo para empezar? Envíanos un mensaje o encuéntranos. Estamos aquí para ayudarte.</p>
+        </section>
+
+        <!-- Contenido de Contacto y Formulario -->
+        <section class="container mx-auto px-6 mt-16">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+
+                <!-- Columna de Información -->
+                <div class="lg:col-span-1" data-aos="fade-right">
+                    <h2 class="text-2xl font-bold text-white mb-6">Información de Contacto</h2>
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <img src="assets/icons/whatsapp.svg" class="w-6 h-6 mt-1 mr-4 text-brand-accent-2" style="filter: invert(75%) sepia(53%) saturate(4931%) hue-rotate(359deg) brightness(98%) contrast(96%);" alt="WhatsApp">
+                            <div>
+                                <h3 class="font-semibold text-white">WhatsApp</h3>
+                                <p class="text-brand-text-secondary">492 246 1907</p>
+                                <p class="text-brand-text-secondary">492 107 9626</p>
+                                <a href="https://wa.me/5214922461907?text=Hola%20quiero%20cotizar%20en%20terraaZac" target="_blank" rel="noopener noreferrer" class="text-brand-accent-2 hover:underline">Enviar mensaje</a>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <img src="assets/icons/instagram.svg" class="w-6 h-6 mt-1 mr-4 text-brand-accent-2" style="filter: invert(75%) sepia(53%) saturate(4931%) hue-rotate(359deg) brightness(98%) contrast(96%);" alt="Instagram">
+                            <div>
+                                <h3 class="font-semibold text-white">Instagram</h3>
+                                <p class="text-brand-text-secondary">@TerraaZac</p>
+                                <a href="https://instagram.com/TerraaZac" target="_blank" rel="noopener noreferrer" class="text-brand-accent-2 hover:underline">Seguir perfil</a>
+                            </div>
+                        </div>
+                         <div class="flex items-start">
+                            <svg class="w-6 h-6 mt-1 mr-4 text-brand-accent-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                            <div>
+                                <h3 class="font-semibold text-white">Email</h3>
+                                <p class="text-brand-text-secondary">contacto@terraazac.com</p>
+                                <a href="mailto:contacto@terraazac.com" class="text-brand-accent-2 hover:underline">Enviar correo</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Columna del Formulario -->
+                <div class="lg:col-span-2 bg-brand-surface-1 p-8 rounded-2xl border border-brand-border" data-aos="fade-left">
+                    <h2 class="text-2xl font-bold text-white mb-6">Envíanos un Mensaje</h2>
+                    <form id="contact-form" action="#" method="POST" class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-brand-text-secondary mb-2">Nombre</label>
+                            <input type="text" name="name" id="name" required class="w-full bg-brand-surface-2 border border-brand-border rounded-lg px-4 py-3 text-white focus:ring-2 focus:ring-brand-accent-1 focus:border-brand-accent-1 transition">
+                        </div>
+                        <div>
+                            <label for="phone" class="block text-sm font-medium text-brand-text-secondary mb-2">Teléfono</label>
+                            <input type="tel" name="phone" id="phone" required class="w-full bg-brand-surface-2 border border-brand-border rounded-lg px-4 py-3 text-white focus:ring-2 focus:ring-brand-accent-1 focus:border-brand-accent-1 transition">
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="date" class="block text-sm font-medium text-brand-text-secondary mb-2">Fecha tentativa</label>
+                                <input type="date" name="date" id="date" class="w-full bg-brand-surface-2 border border-brand-border rounded-lg px-4 py-3 text-white focus:ring-2 focus:ring-brand-accent-1 focus:border-brand-accent-1 transition">
+                            </div>
+                            <div>
+                                <label for="service" class="block text-sm font-medium text-brand-text-secondary mb-2">Servicio de interés</label>
+                                <select id="service" name="service" class="w-full bg-brand-surface-2 border border-brand-border rounded-lg px-4 py-3 text-white focus:ring-2 focus:ring-brand-accent-1 focus:border-brand-accent-1 transition">
+                                    <option>General</option>
+                                    <option>Terraza para eventos</option>
+                                    <option>Revelación de género</option>
+                                    <option>Renta de letras LED</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-brand-text-secondary mb-2">Mensaje</label>
+                            <textarea id="message" name="message" rows="4" required class="w-full bg-brand-surface-2 border border-brand-border rounded-lg px-4 py-3 text-white focus:ring-2 focus:ring-brand-accent-1 focus:border-brand-accent-1 transition"></textarea>
+                        </div>
+                        <!-- Honeypot Field -->
+                        <div class="hidden">
+                            <label for="honeypot">No llenar este campo</label>
+                            <input type="text" id="honeypot" name="honeypot">
+                        </div>
+                        <div>
+                            <button type="submit" class="w-full bg-brand-accent-1 text-white px-6 py-4 rounded-lg font-semibold hover:bg-opacity-90 transition-all">Enviar Mensaje</button>
+                        </div>
+                         <div id="form-status" class="text-center mt-4"></div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mapa -->
+        <section class="container mx-auto px-6 py-16">
+            <div class="relative rounded-2xl overflow-hidden shadow-[0_0_0_1px_rgba(255,255,255,.08)]" data-aos="zoom-in">
+                <div class="absolute top-4 left-4 bg-brand-bg/70 backdrop-blur-sm text-white px-4 py-2 rounded-lg z-10">Estamos aquí</div>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3678.863772213799!2d-102.57602778810217!3d22.77013172421375!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86824e7523555555%3A0xddf670f560064506!2sCentro%20hist%C3%B3rico%20de%20Zacatecas!5e0!3m2!1ses-419!2smx!4v1678886543210!5m2!1ses-419!2smx"
+                    class="w-full h-96 border-0"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-brand-surface-1 border-t border-brand-border">
+        <div class="container mx-auto px-6 py-8 text-center text-brand-text-secondary">
+            <p>&copy; 2025 terraaZac — Derechos reservados | Web diseñada y creada por
+                <a href="https://epicsistems.com" target="_blank" rel="noopener noreferrer" class="font-semibold hover:text-brand-accent-2 transition-colors">Epic Sistems</a>
+            </p>
+            <div class="mt-4 space-x-4">
+                <a href="#" class="text-sm hover:underline">Aviso de Privacidad</a>
+                <span class="text-sm">|</span>
+                <a href="#" class="text-sm hover:underline">Términos y Condiciones</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botón Flotante de WhatsApp -->
+    <a href="https://wa.me/5214922461907?text=Hola%20quiero%20cotizar%20en%20terraaZac"
+       target="_blank"
+       rel="noopener noreferrer"
+       aria-label="Contactar por WhatsApp"
+       class="fixed bottom-6 right-6 z-30 bg-green-500 text-white p-3 rounded-full shadow-lg hover:bg-green-600 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-brand-bg focus:ring-green-500 transition-all duration-300 ease-in-out">
+        <img src="assets/icons/whatsapp.svg" class="h-8 w-8" alt="WhatsApp Icon" style="filter: brightness(0) invert(1);">
+    </a>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/main.js" defer></script>
+    <script src="js/form.js" defer></script>
+
+</body>
+</html>

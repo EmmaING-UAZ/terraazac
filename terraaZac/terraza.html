@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="es" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO y Metadatos -->
+    <title>Terraza en el Centro | Paquetes y Precios | terraaZac</title>
+    <meta name="description" content="Descubre nuestros paquetes para una noche inolvidable en nuestra terraza en el centro de Zacatecas. Montaje completo, decoración y servicio dedicado.">
+    <meta name="keywords" content="terraza zacatecas, renta terraza, revelacion de genero, letras gigantes, eventos zacatecas, marry me, quieres ser mi novia">
+     <link rel="canonical" href="https://www.terraazac.com/terraza.html"> <!-- Reemplazar con URL final -->
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.terraazac.com/terraza.html"> <!-- Reemplazar con URL final -->
+    <meta property="og:title" content="Terraza en el Centro | Paquetes y Precios | terraaZac">
+    <meta property="og:description" content="Descubre nuestros paquetes para una noche inolvidable en nuestra terraza en el centro de Zacatecas. Montaje completo, decoración y servicio dedicado.">
+    <meta property="og:image" content="https://www.terraazac.com/assets/img/hero-terraza-01-dark.jpg"> <!-- Reemplazar con URL final -->
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.terraazac.com/terraza.html"> <!-- Reemplazar con URL final -->
+    <meta property="twitter:title" content="Terraza en el Centro | Paquetes y Precios | terraaZac">
+    <meta property="twitter:description" content="Descubre nuestros paquetes para una noche inolvidable en nuestra terraza en el centro de Zacatecas. Montaje completo, decoración y servicio dedicado.">
+    <meta property="twitter:image" content="https://www.terraazac.com/assets/img/hero-terraza-01-dark.jpg"> <!-- Reemplazar con URL final -->
+
+    <!-- Favicon (placeholder) -->
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+    <!-- Preconnect y DNS-Prefetch para Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://www.youtube-nocookie.com">
+
+    <!-- Google Fonts: Manrope -->
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
+
+    <!-- AOS (Animate on Scroll) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Configuración en línea de Tailwind CSS -->
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              'brand-bg': '#0B0B0D',
+              'brand-surface-1': '#111217',
+              'brand-surface-2': '#171923',
+              'brand-accent-1': '#E84545', // Rojo cálido
+              'brand-accent-2': '#F5B301', // Ámbar
+              'brand-text-primary': '#F3F4F6',
+              'brand-text-secondary': '#B8BBC6',
+              'brand-border': 'rgba(255, 255, 255, 0.08)',
+            },
+            fontFamily: {
+              sans: ['Manrope', 'sans-serif'],
+            }
+          }
+        }
+      }
+    </script>
+
+    <!-- Estilos Globales Personalizados -->
+    <link rel="stylesheet" href="css/global.css">
+
+</head>
+<body class="bg-brand-bg text-brand-text-primary font-sans">
+
+    <!-- Skip to content link for accessibility -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:px-4 focus:py-2 focus:bg-brand-accent-2 focus:text-brand-bg">Saltar al contenido principal</a>
+
+    <!-- Header -->
+    <header id="main-header" class="fixed top-0 left-0 right-0 z-40 transition-all duration-300 ease-in-out">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- Logo -->
+            <a href="/" class="text-2xl font-bold text-brand-text-primary hover:text-brand-accent-2 transition-colors">
+                terraaZac
+            </a>
+
+            <!-- Navegación Desktop -->
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="/index.html" class="text-brand-text-primary hover:text-brand-accent-2 transition-colors">Inicio</a>
+                <a href="/servicios.html" class="text-brand-text-primary hover:text-brand-accent-2 transition-colors">Servicios</a>
+                <a href="/contacto.html" class="text-brand-text-primary hover:text-brand-accent-2 transition-colors">Contacto</a>
+                <a href="https://wa.me/5214922461907?text=Hola%20quiero%20reservar%20en%20terraaZac" target="_blank" rel="noopener noreferrer" class="bg-brand-accent-1 text-white px-5 py-2 rounded-full font-semibold hover:bg-opacity-90 transition-all">
+                    Reservar por WhatsApp
+                </a>
+            </div>
+
+            <!-- Botón Menú Móvil -->
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-brand-text-primary focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Menú Móvil (Off-canvas) -->
+        <div id="mobile-menu" class="hidden md:hidden fixed top-0 left-0 w-full h-full bg-brand-bg/95 backdrop-blur-lg">
+            <div class="flex justify-end p-6">
+                <button id="close-mobile-menu-button" class="text-brand-text-primary focus:outline-none">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+            </div>
+            <div class="flex flex-col items-center justify-center space-y-8 mt-16">
+                <a href="/index.html" class="text-2xl text-brand-text-primary hover:text-brand-accent-2 transition-colors">Inicio</a>
+                <a href="/servicios.html" class="text-2xl text-brand-text-primary hover:text-brand-accent-2 transition-colors">Servicios</a>
+                <a href="/contacto.html" class="text-2xl text-brand-text-primary hover:text-brand-accent-2 transition-colors">Contacto</a>
+                <a href="https://wa.me/5214922461907?text=Hola%20quiero%20reservar%20en%20terraaZac" target="_blank" rel="noopener noreferrer" class="mt-8 bg-brand-accent-1 text-white px-8 py-3 rounded-full font-semibold hover:bg-opacity-90 transition-all text-lg">
+                    Reservar por WhatsApp
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contenido Principal -->
+    <main id="main-content" class="pt-24 sm:pt-32">
+
+        <!-- Encabezado de la Página -->
+        <section class="container mx-auto px-6 text-center" data-aos="fade-up">
+            <h1 class="text-4xl md:text-5xl font-extrabold text-brand-text-primary">Terraza en el Centro</h1>
+            <p class="mt-4 text-lg max-w-2xl mx-auto text-brand-text-secondary">Vive una noche privada con montaje completo, música, decoración y atención dedicada.</p>
+        </section>
+
+        <!-- Galería de Imágenes (Placeholder) -->
+        <section class="container mx-auto px-6 mt-16" data-aos="fade-up" data-aos-delay="100">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <img src="assets/img/terraza-galeria-01.jpg" alt="Galería Terraza 1" class="rounded-lg object-cover w-full h-full aspect-square shadow-lg" loading="lazy" decoding="async">
+                <img src="assets/img/terraza-galeria-02.jpg" alt="Galería Terraza 2" class="rounded-lg object-cover w-full h-full aspect-square shadow-lg" loading="lazy" decoding="async">
+                <img src="assets/img/terraza-galeria-03.jpg" alt="Galería Terraza 3" class="rounded-lg object-cover w-full h-full aspect-square shadow-lg" loading="lazy" decoding="async">
+                <img src="assets/img/terraza-galeria-04.jpg" alt="Galería Terraza 4" class="rounded-lg object-cover w-full h-full aspect-square shadow-lg" loading="lazy" decoding="async">
+            </div>
+        </section>
+
+        <!-- Sección de Paquetes -->
+        <section class="py-20 sm:py-24">
+            <div class="container mx-auto px-6">
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+
+                    <!-- Paquete 1 -->
+                    <div class="bg-brand-surface-1 rounded-xl border border-brand-border p-8" data-aos="fade-up" data-aos-delay="200">
+                        <h3 class="text-2xl font-bold text-brand-text-primary">Paquete 1</h3>
+                        <div class="my-4">
+                            <span class="text-5xl font-extrabold text-white">$2,550</span>
+                            <span class="text-brand-text-secondary"> MXN</span>
+                        </div>
+                        <ul class="space-y-3 text-brand-text-secondary mb-8">
+                            <li class="flex items-center"><svg class="w-5 h-5 text-brand-accent-2 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Ramo de flores</li>
+                            <li class="flex items-center"><svg class="w-5 h-5 text-brand-accent-2 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Botella de vino</li>
+                            <li class="flex items-center"><svg class="w-5 h-5 text-brand-accent-2 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Playlist preferida</li>
+                            <li class="flex items-center"><svg class="w-5 h-5 text-brand-accent-2 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Loza y cubiertos</li>
+                            <li class="flex items-center"><svg class="w-5 h-5 text-brand-accent-2 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Personal a tu servicio</li>
+                            <li class="flex items-center"><svg class="w-5 h-5 text-brand-accent-2 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Decoración acorde al evento</li>
+                            <li class="flex items-center"><svg class="w-5 h-5 text-brand-accent-2 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Pizza para 2 personas</li>
+                            <li class="flex items-center"><svg class="w-5 h-5 text-brand-accent-2 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Frase colgante de madera</li>
+                        </ul>
+                        <a href="https://wa.me/5214922461907?text=Hola,%20me%20interesa%20el%20Paquete%201%20de%20la%20terraza." class="w-full text-center bg-brand-accent-1 text-white px-6 py-3 rounded-lg font-semibold hover:bg-opacity-90 transition-all block">Reservar por WhatsApp</a>
+                    </div>
+
+                    <!-- Paquete 2 (Destacado) -->
+                    <div class="bg-brand-surface-2 rounded-xl border-2 border-brand-accent-1 p-8 ring-4 ring-brand-accent-1/20" data-aos="fade-up" data-aos-delay="300">
+                        <div class="flex justify-between items-center">
+                            <h3 class="text-2xl font-bold text-white">Paquete 2</h3>
+                            <span class="bg-brand-accent-1 text-white text-xs font-bold px-3 py-1 rounded-full uppercase">Popular</span>
+                        </div>
+                        <div class="my-4">
+                            <span class="text-5xl font-extrabold text-white">$3,300</span>
+                            <span class="text-brand-text-secondary"> MXN</span>
+                        </div>
+                        <ul class="space-y-3 text-brand-text-secondary mb-8">
+                            <li class="flex items-center"><svg class="w-5 h-5 text-brand-accent-2 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Ramo de flores y botella de vino</li>
+                            <li class="flex items-center"><svg class="w-5 h-5 text-brand-accent-2 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Playlist, loza y personal</li>
+                            <li class="flex items-center"><svg class="w-5 h-5 text-brand-accent-2 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Decoración y pizza para 2</li>
+                            <li class="flex items-center font-bold text-white"><svg class="w-5 h-5 text-brand-accent-1 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>5 fotos impresas</li>
+                            <li class="flex items-center font-bold text-white"><svg class="w-5 h-5 text-brand-accent-1 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Frase en letrero LED</li>
+                            <li class="flex items-center font-bold text-white"><svg class="w-5 h-5 text-brand-accent-1 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Corazón gigante con globos</li>
+                            <li class="flex items-center font-bold text-white"><svg class="w-5 h-5 text-brand-accent-1 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Par de chisperos (pirotecnia)</li>
+                        </ul>
+                        <a href="https://wa.me/5214922461907?text=Hola,%20me%20interesa%20el%20Paquete%202%20de%20la%20terraza." class="w-full text-center bg-brand-accent-1 text-white px-6 py-3 rounded-lg font-semibold hover:bg-opacity-90 transition-all block">Reservar por WhatsApp</a>
+                    </div>
+
+                    <!-- Paquete 3 -->
+                    <div class="bg-brand-surface-1 rounded-xl border border-brand-border p-8" data-aos="fade-up" data-aos-delay="400">
+                        <h3 class="text-2xl font-bold text-brand-text-primary">Paquete 3</h3>
+                        <div class="my-4">
+                            <span class="text-5xl font-extrabold text-white">$4,200</span>
+                            <span class="text-brand-text-secondary"> MXN</span>
+                        </div>
+                        <ul class="space-y-3 text-brand-text-secondary mb-8">
+                           <li class="flex items-center"><svg class="w-5 h-5 text-brand-accent-2 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Todo lo del Paquete 2</li>
+                           <li class="flex items-center font-bold text-white"><svg class="w-5 h-5 text-brand-accent-1 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Frase en letras gigantes</li>
+                           <li class="flex items-center text-sm"><svg class="w-4 h-4 text-brand-text-secondary mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>(BE MY GF, MARRY ME, HBD)</li>
+                           <li class="flex items-center text-sm"><svg class="w-4 h-4 text-brand-text-secondary mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>Cotiza otra frase por DM</li>
+                        </ul>
+                        <a href="https://wa.me/5214922461907?text=Hola,%20me%20interesa%20el%20Paquete%203%20de%20la%20terraza%20con%20letras%20gigantes." class="w-full text-center bg-brand-accent-1 text-white px-6 py-3 rounded-lg font-semibold hover:bg-opacity-90 transition-all block">Reservar por WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="container mx-auto px-6 py-16">
+            <div class="bg-brand-surface-2 rounded-xl p-8 md:p-12 border border-brand-border flex flex-col md:flex-row justify-between items-center gap-6" data-aos="zoom-in">
+                <div class="text-center md:text-left">
+                    <h2 class="text-2xl md:text-3xl font-bold text-white">¿Listo para crear un momento mágico?</h2>
+                    <p class="text-brand-text-secondary mt-2">Contáctanos para resolver tus dudas y agendar tu fecha.</p>
+                </div>
+                <div class="flex-shrink-0 flex gap-4">
+                    <a href="https://wa.me/5214922461907?text=Hola,%20quisiera%20reservar%20la%20terraza." class="bg-brand-accent-1 text-white px-6 py-3 rounded-lg font-semibold hover:bg-opacity-90 transition-all">Reservar por WhatsApp</a>
+                    <a href="tel:+524921079626" class="bg-brand-surface-1 text-white px-6 py-3 rounded-lg font-semibold hover:bg-opacity-80 transition-all">Llamar ahora</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-brand-surface-1 border-t border-brand-border">
+        <div class="container mx-auto px-6 py-8 text-center text-brand-text-secondary">
+            <p>&copy; 2025 terraaZac — Derechos reservados | Web diseñada y creada por
+                <a href="https://epicsistems.com" target="_blank" rel="noopener noreferrer" class="font-semibold hover:text-brand-accent-2 transition-colors">Epic Sistems</a>
+            </p>
+            <div class="mt-4 space-x-4">
+                <a href="#" class="text-sm hover:underline">Aviso de Privacidad</a>
+                <span class="text-sm">|</span>
+                <a href="#" class="text-sm hover:underline">Términos y Condiciones</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botón Flotante de WhatsApp -->
+    <a href="https://wa.me/5214922461907?text=Hola%20quiero%20cotizar%20en%20terraaZac"
+       target="_blank"
+       rel="noopener noreferrer"
+       aria-label="Contactar por WhatsApp"
+       class="fixed bottom-6 right-6 z-30 bg-green-500 text-white p-3 rounded-full shadow-lg hover:bg-green-600 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-brand-bg focus:ring-green-500 transition-all duration-300 ease-in-out">
+        <img src="assets/icons/whatsapp.svg" class="h-8 w-8" alt="WhatsApp Icon" style="filter: brightness(0) invert(1);">
+    </a>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/main.js" defer></script>
+    <!-- Otros scripts como video.js o form.js se añadirán en sus respectivas páginas -->
+
+</body>
+</html>

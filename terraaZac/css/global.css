@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    /* Activa el desplazamiento suave en toda la página */
+    scroll-behavior: smooth;
+  }
+  body {
+    /* Asegura que el color de fondo y texto base se apliquen desde la configuración de Tailwind */
+    /* Estos se definen en el script de configuración en cada HTML */
+  }
+}
+
+/* Aquí se pueden añadir componentes personalizados más adelante */
+/* Ejemplo:
+@layer components {
+  .btn-primary {
+    @apply px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600;
+  }
+}
+*/
