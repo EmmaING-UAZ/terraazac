@@ -48,12 +48,52 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // 3. Inicialización de AOS (Animate On Scroll)
-    // Se inicializa con valores por defecto. Se pueden añadir opciones si es necesario.
-    // https://github.com/michalsnik/aos
     AOS.init({
-        duration: 700, // Duración de la animación en ms
-        once: true, // Si la animación debe ocurrir solo una vez
-        offset: 50, // Distancia desde el borde para disparar la animación
+        duration: 700,
+        once: true,
+        offset: 50,
     });
 
+    // 4. Lógica para el botón de volver en páginas de servicio
+    const backButton = document.getElementById('back-button');
+    if (backButton) {
+        const scrollThreshold = 50;
+
+        const handleBackButtonScroll = () => {
+            if (window.scrollY > scrollThreshold) {
+                backButton.classList.add('opacity-0', 'transform', '-translate-y-12');
+            } else {
+                backButton.classList.remove('opacity-0', 'transform', '-translate-y-12');
+            }
+        };
+
+        window.addEventListener('scroll', handleBackButtonScroll);
+        handleBackButtonScroll();
+    }
+
+    // 5. Lógica para el botón de scroll-to-top
+    const scrollToTopButton = document.getElementById('scroll-to-top');
+    if (scrollToTopButton) {
+        const scrollThreshold = 300;
+
+        const handleScrollToTopButton = () => {
+            if (window.scrollY > scrollThreshold) {
+                scrollToTopButton.classList.remove('hidden');
+                scrollToTopButton.classList.add('flex');
+            } else {
+                scrollToTopButton.classList.add('hidden');
+                scrollToTopButton.classList.remove('flex');
+            }
+        };
+
+        scrollToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        window.addEventListener('scroll', handleScrollToTopButton);
+        handleScrollToTopButton();
+    }
 });
