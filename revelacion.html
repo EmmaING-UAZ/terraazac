@@ -116,8 +116,8 @@
     <main id="main-content" class="pt-24 sm:pt-32">
 
         <!-- Botón de Volver -->
-        <div class="container mx-auto px-6">
-            <a href="servicios.html" class="fixed top-24 left-6 z-50 bg-brand-surface-2/50 backdrop-blur-sm border border-brand-border text-white w-12 h-12 rounded-full flex items-center justify-center hover:bg-white/20 transition-all" aria-label="Volver a servicios">
+        <div class="container mx-auto px-6 pt-8 text-left">
+            <a href="servicios.html" id="back-button" class="bg-brand-surface-2/50 backdrop-blur-sm border border-brand-border text-white w-12 h-12 rounded-full flex items-center justify-center hover:bg-white/20 transition-all" aria-label="Volver a servicios">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg>
             </a>
         </div>
@@ -161,7 +161,7 @@
                             <p class="text-sm text-brand-text-secondary"><strong class="text-white">Nota:</strong> Personalizamos el detalle final (polvo, confeti o balón) según tu preferencia.</p>
                         </div>
                         <div class="flex flex-wrap gap-4 mt-4">
-                            <a href="https://wa.me/5214922461907?text=Hola,%20me%20interesa%20el%20paquete%20de%20revelación%20de%20género." class="w-full text-center bg-brand-accent-1 text-white px-6 py-3 rounded-lg font-semibold hover:bg-opacity-90 transition-all block">¡Lo quiero!</a>
+                            <a href="https://wa.me/5214922461907?text=Hola,%20me%20interesa%20el%20paquete%20de%20revelacion%20de%20genero." class="w-full text-center bg-brand-accent-1 text-white px-6 py-3 rounded-lg font-semibold hover:bg-opacity-90 transition-all block">¡Lo quiero!</a>
                             <a href="#galeria-paquete-revelacion" class="w-full text-center bg-brand-surface-2/50 backdrop-blur-sm border border-brand-border text-white px-6 py-3 rounded-lg font-semibold hover:bg-white/20 transition-all">Ver galería</a>
                         </div>
                     </div>
@@ -179,23 +179,10 @@
                 <p class="mt-4 text-lg text-brand-text-secondary max-w-2xl mx-auto">Así se viven nuestras revelaciones.</p>
             </div>
             <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-                <div class="col-span-1">
                     <img src="assets/img/revelacion-galeria-01.jpg" alt="Galería Revelación 1" class="rounded-lg object-cover w-full h-full aspect-square shadow-lg" loading="lazy" decoding="async">
-                </div>
-                <div class="col-span-1">
                     <img src="assets/img/revelacion-galeria-02.jpg" alt="Galería Revelación 2" class="rounded-lg object-cover w-full h-full aspect-square shadow-lg" loading="lazy" decoding="async">
-                </div>
-                <div class="col-span-1">
                     <img src="assets/img/revelacion-galeria-03.jpg" alt="Galería Revelación 3" class="rounded-lg object-cover w-full h-full aspect-square shadow-lg" loading="lazy" decoding="async">
-                </div>
-                <div class="col-span-1">
                     <img src="assets/img/revelacion-galeria-04.jpg" alt="Galería Revelación 4" class="rounded-lg object-cover w-full h-full aspect-square shadow-lg" loading="lazy" decoding="async">
-                </div>
-            </div>
-            <div class="text-center mt-12" data-aos="fade-up">
-                <h3 class="text-2xl md:text-3xl font-extrabold text-brand-text-primary">Videos</h3>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8">
                 <video class="rounded-lg" controls poster="assets/video-thumbs/v4.jpg" src="assets/videos/v4.mp4"></video>
                 <video class="rounded-lg" controls poster="assets/video-thumbs/v5.jpg" src="assets/videos/v5.mp4"></video>
                 <video class="rounded-lg" controls poster="assets/video-thumbs/v6.jpg" src="assets/videos/v6.mp4"></video>
@@ -217,14 +204,21 @@
         </div>
     </footer>
 
-    <!-- Botón Flotante de WhatsApp -->
-    <a href="https://wa.me/5214922461907?text=Hola%20quiero%20cotizar%20en%20TerraZac"
-       target="_blank"
-       rel="noopener noreferrer"
-       aria-label="Contactar por WhatsApp"
-       class="fixed bottom-6 right-6 z-30 bg-green-500 text-white p-3 rounded-full shadow-lg hover:bg-green-600 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-brand-bg focus:ring-green-500 transition-all duration-300 ease-in-out">
-        <img src="assets/icons/whatsapp.svg" class="h-8 w-8" alt="WhatsApp Icon" style="filter: brightness(0) invert(1);">
-    </a>
+    <!-- Botones Flotantes -->
+    <div class="fixed bottom-6 right-6 z-30 space-y-4">
+        <!-- Botón de Scroll-to-top -->
+        <button id="scroll-to-top" class="hidden bg-brand-surface-2/50 backdrop-blur-sm border border-brand-border text-white w-12 h-12 rounded-full items-center justify-center hover:bg-white/20 transition-all" aria-label="Volver arriba">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="animate-bounce"><path d="m5 12 7-7 7 7"/><path d="M12 19V5"/></svg>
+        </button>
+        <!-- Botón Flotante de WhatsApp -->
+        <a href="https://wa.me/5214922461907?text=Hola%20quiero%20cotizar%20en%20TerraZac"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="Contactar por WhatsApp"
+           class="flex bg-green-500 text-white p-3 rounded-full shadow-lg hover:bg-green-600 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-brand-bg focus:ring-green-500 transition-all duration-300 ease-in-out">
+            <img src="assets/icons/whatsapp.svg" class="h-8 w-8" alt="WhatsApp Icon" style="filter: brightness(0) invert(1);">
+        </a>
+    </div>
 
     <!-- Video Gallery Modal -->
     <div id="video-modal" class="hidden fixed inset-0 z-50 bg-brand-bg/90 backdrop-blur-lg flex items-center justify-center p-4">
