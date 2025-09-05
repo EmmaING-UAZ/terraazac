@@ -67,6 +67,8 @@
 
     <!-- Estilos Globales Personalizados -->
     <link rel="stylesheet" href="css/global.css">
+    <!-- Estilos del Slider -->
+    <link rel="stylesheet" href="css/slider.css">
 
 </head>
 <body class="bg-brand-bg text-brand-text-primary font-sans">
@@ -170,28 +172,48 @@
             </div>
         </section>
 
-        <!-- 3. Sección de Servicios -->
+        <!-- 3. Sección de Servicios con Slider -->
         <section id="servicios" class="py-20 sm:py-24 bg-brand-bg">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12" data-aos="fade-up">
                     <h2 class="text-3xl md:text-4xl font-extrabold text-brand-text-primary">Explora Nuestros Servicios</h2>
                     <p class="mt-4 text-lg text-brand-text-secondary max-w-2xl mx-auto">Creamos el escenario perfecto para cada ocasión especial.</p>
                 </div>
-                <div class="flex justify-center">
-                    <!-- Card 1: Terraza -->
-                    <div class="group relative rounded-xl overflow-hidden shadow-2xl lg:w-2/3" data-aos="fade-up" data-aos-delay="100" style="height: 500px;">
-                        <img src="assets/img/card-terraza-16x9.jpg" alt="Terraza para eventos" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-110" loading="lazy" decoding="async">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
-                        <div class="relative h-full flex flex-col justify-end p-8 text-white">
-                            <div class="border-t-2 border-brand-accent-1 w-16 mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                            <h3 class="text-2xl font-bold mb-2">Terraza para eventos</h3>
-                            <p class="text-brand-text-secondary mb-6 leading-relaxed">Ambientación, chisperos y letras gigantes para pedir ‘¿Quieres ser mi novia?’, ‘MARRY ME’, HBD y más.</p>
-                            <div class="flex flex-wrap gap-4">
-                                <a href="terraza.html" class="bg-brand-surface-2/50 backdrop-blur-sm border border-brand-border text-white px-5 py-2 rounded-full font-semibold hover:bg-white/20 transition-all">Ver paquetes</a>
-                                <a href="servicios.html" class="bg-brand-accent-1 text-white px-5 py-2 rounded-full font-semibold hover:bg-opacity-90 transition-all">Ver todos nuestros servicios</a>
-                            </div>
+            </div>
+            
+            <!-- Slider Container -->
+            <div class="slider-container" data-aos="fade-up">
+                <div class="slide">
+                    <!-- Item 1: Terraza -->
+                    <div class="item" style="background-image: url('assets/img/card-terraza-16x9.jpg');">
+                        <div class="content">
+                            <div class="name">Terraza para Eventos</div>
+                            <div class="des">Un espacio exclusivo con vistas espectaculares para tus celebraciones más importantes.</div>
+                            <a href="terraza.html" class="bg-brand-accent-2 text-brand-bg hover:bg-opacity-90">Ver Terraza</a>
                         </div>
                     </div>
+                    <!-- Item 2: Revelación de Género -->
+                    <div class="item" style="background-image: url('assets/img/card-revelacion-16x9.jpg');">
+                        <div class="content">
+                            <div class="name">Revelación de Género</div>
+                            <div class="des">Crea un momento inolvidable y lleno de emoción con nuestros paquetes de revelación.</div>
+                            <a href="servicios.html" class="bg-brand-accent-2 text-brand-bg hover:bg-opacity-90">Ver Paquetes</a>
+                        </div>
+                    </div>
+                    <!-- Item 3: Renta de Letras -->
+                    <div class="item" style="background-image: url('assets/img/card-letras-16x9.jpg');">
+                        <div class="content">
+                            <div class="name">Renta de Letras Gigantes</div>
+                            <div class="des">"MARRY ME", "HBD", nombres y más. Dale un toque monumental a tu propuesta o festejo.</div>
+                            <a href="servicios.html" class="bg-brand-accent-2 text-brand-bg hover:bg-opacity-90">Cotizar Letras</a>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Botones de Navegación -->
+                <div class="slider-button">
+                    <button class="slider-prev"><i class="fa-solid fa-arrow-left"></i></button>
+                    <button class="slider-next"><i class="fa-solid fa-arrow-right"></i></button>
                 </div>
             </div>
         </section>
@@ -223,7 +245,25 @@
 
     <!-- Scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Font Awesome es cargado por el slider.css, si es necesario, o puede usar un kit más moderno -->
     <script src="js/main.js" defer></script>
+    <script src="js/slider.js" defer></script>
+    <!-- Otros scripts como video.js o form.js se añadirán en sus respectivas páginas -->
+
+</body>
+</html>
+       target="_blank"
+       rel="noopener noreferrer"
+       aria-label="Contactar por WhatsApp"
+       class="fixed bottom-6 right-6 z-30 bg-green-500 text-white p-3 rounded-full shadow-lg hover:bg-green-600 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-brand-bg focus:ring-green-500 transition-all duration-300 ease-in-out">
+        <img src="assets/icons/whatsapp.svg" class="h-8 w-8" alt="WhatsApp Icon" style="filter: brightness(0) invert(1);">
+    </a>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> <!-- Font Awesome para iconos -->
+    <script src="js/main.js" defer></script>
+    <script src="js/slider.js" defer></script>
     <!-- Otros scripts como video.js o form.js se añadirán en sus respectivas páginas -->
 
 </body>
