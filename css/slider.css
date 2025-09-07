@@ -10,7 +10,7 @@
     position: relative;
     width: 100%;
     max-width: 1200px; /* Ancho máximo para el slider */
-    height: 500px; /* Altura fija para el área del slider */
+    height: 550px; /* Altura aumentada para dar más espacio */
     margin: 40px auto;
     perspective: 1200px; /* Activa el entorno 3D */
     overflow: hidden;
@@ -37,8 +37,8 @@
  */
 .item {
     position: absolute;
-    width: 280px; /* Ancho de las tarjetas secundarias */
-    height: 400px; /* Altura de las tarjetas secundarias */
+    width: 320px; /* Ancho aumentado para tarjetas secundarias */
+    height: 450px; /* Altura aumentada para tarjetas secundarias */
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) scale(0.8); /* Posición y escala inicial */
@@ -59,8 +59,8 @@
  * `transform` la centra y la escala.
  */
 .item.active {
-    width: 600px; /* Ancho de la tarjeta principal */
-    height: 400px;
+    width: 650px; /* Ancho aumentado para la tarjeta principal */
+    height: 450px; /* Altura aumentada */
     transform: translate(-50%, -50%) scale(1);
     opacity: 1;
     z-index: 3;
@@ -121,29 +121,36 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.2));
+    /* Gradiente más oscuro en la parte inferior para mejorar contraste del footer */
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.8) 100%);
     border-radius: 20px;
     transition: background 0.6s ease;
 }
 
 .item.active::before {
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+    /* El gradiente en la tarjeta activa es un poco más sutil en la parte superior */
+    background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.9) 100%);
 }
 
 /*
- * Contenido de la tarjeta (título, descripción, botón).
- * Inicialmente oculto y se muestra solo en la tarjeta activa.
+ * Contenido de la tarjeta.
+ * Usamos flexbox para posicionar el header arriba y el footer abajo.
  */
 .content {
     position: absolute;
-    bottom: 30px;
-    left: 30px;
-    right: 30px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 30px;
     z-index: 1;
     color: #fff;
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.5s ease 0.3s, transform 0.5s ease 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Clave para la distribución */
 }
 
 .item.active .content {
@@ -152,11 +159,10 @@
 }
 
 .content .name {
-    font-size: 2rem; /* 32px */
+    font-size: 1.75rem; /* Tamaño ajustado (28px) */
     font-weight: 800;
     line-height: 1.2;
-    margin-bottom: 8px;
-    text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
 }
 
 .content .des {
@@ -198,7 +204,7 @@
  */
 .slider-navigation {
     position: absolute;
-    bottom: 20px;
+    bottom: 30px; /* Ajustamos la posición para que quede dentro del contenedor más alto */
     left: 50%;
     transform: translateX(-50%);
     z-index: 10;
@@ -309,7 +315,7 @@
     }
 
     .slider-navigation {
-        bottom: -15px; /* Posicionamos los botones debajo del slider */
+        bottom: 10px; /* Ajustamos para que quede dentro del contenedor */
         gap: 10px;
     }
 
