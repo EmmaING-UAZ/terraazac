@@ -1,131 +1,312 @@
+/* --- Estilos para el Slider 3D de Tarjetas de Servicios --- */
+
+/*
+ * Contenedor principal del slider.
+ * Se utiliza `perspective` para crear un espacio 3D.
+ * `overflow: hidden` es crucial para que las tarjetas que salen
+ * de la vista no generen una barra de scroll.
+ */
 .slider-container {
-  position: relative;
-  width: 100%;
-  max-width: 1200px; /* Ancho máximo del slider */
-  height: 500px; /* Altura aumentada para mejor visualización */
-  margin: auto;
-  overflow: hidden; /* Oculta los items que se salen */
+    position: relative;
+    width: 100%;
+    max-width: 1200px; /* Ancho máximo para el slider */
+    height: 500px; /* Altura fija para el área del slider */
+    margin: 40px auto;
+    perspective: 1200px; /* Activa el entorno 3D */
+    overflow: hidden;
 }
 
-.slider-container .slide .item {
-  width: 200px;
-  height: 320px;
-  position: absolute;
-  top: 50%;
-  transform: translate(0, -50%);
-  border-radius: 20px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-  background-position: 50% 50%;
-  background-size: cover;
-  display: inline-block;
-  transition: 0.5s;
+/*
+ * Contenedor de las tarjetas.
+ * `transform-style: preserve-3d` asegura que las transformaciones 3D
+ * de los hijos (las tarjetas) se rendericen en el espacio 3D.
+ */
+.slide {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.8s cubic-bezier(0.77, 0, 0.175, 1); /* Transición suave para el movimiento del carrusel */
 }
 
-.slide .item:nth-child(1) {
-  top: 0;
-  left: 0;
-  transform: translate(0, 0);
-  border-radius: 0;
-  width: 100%;
-  height: 100%;
+/*
+ * Estilo base para cada tarjeta (.item).
+ * Posicionadas de forma absoluta para poder apilarlas y moverlas en el espacio 3D.
+ * `transition` se aplica a todas las propiedades para animar los cambios de estado.
+ * `background-size: cover` asegura que la imagen de fondo llene la tarjeta.
+ */
+.item {
+    position: absolute;
+    width: 280px; /* Ancho de las tarjetas secundarias */
+    height: 400px; /* Altura de las tarjetas secundarias */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.8); /* Posición y escala inicial */
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.6s ease, opacity 0.6s ease, filter 0.6s ease;
+    opacity: 0.4;
+    cursor: pointer;
+    filter: blur(3px) grayscale(50%);
 }
 
-.slide .item:nth-child(2) {
-  left: 75%;
+/*
+ * Estilos para la tarjeta activa.
+ * Se hace más grande, totalmente opaca y sin filtros para destacarla.
+ * `z-index` la pone por encima de las demás.
+ * `transform` la centra y la escala.
+ */
+.item.active {
+    width: 600px; /* Ancho de la tarjeta principal */
+    height: 400px;
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+    z-index: 3;
+    cursor: default;
+    filter: blur(0) grayscale(0%);
 }
 
-.slide .item:nth-child(3) {
-  left: calc(75% + 220px);
+/*
+ * Posicionamiento de las tarjetas siguientes (a la derecha).
+ * `transform` las mueve, las rota en el eje Y para dar profundidad y las escala.
+ * El `z-index` las organiza correctamente.
+ */
+.item.next {
+    transform: translate(-50%, -50%) translateX(250px) translateZ(-200px) rotateY(-35deg) scale(0.9);
+    z-index: 2;
+    opacity: 0.7;
 }
 
-.slide .item:nth-child(n + 4) {
-  left: calc(50% + 650px);
-  opacity: 0;
+.item.next-2 {
+    transform: translate(-50%, -50%) translateX(450px) translateZ(-350px) rotateY(-45deg) scale(0.8);
+    z-index: 1;
+    opacity: 0.4;
 }
 
-
-.item .content {
-  position: absolute;
-  top: 50%;
-  left: 100px;
-  width: 350px;
-  text-align: left;
-  color: #F3F4F6; /* brand-text-primary */
-  transform: translate(0, -50%);
-  font-family: 'Manrope', sans-serif;
-  display: none;
-  text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+/*
+ * Posicionamiento de las tarjetas previas (a la izquierda).
+ * Similar a las siguientes, pero en la dirección opuesta.
+ */
+.item.prev {
+    transform: translate(-50%, -50%) translateX(-250px) translateZ(-200px) rotateY(35deg) scale(0.9);
+    z-index: 2;
+    opacity: 0.7;
 }
 
-.slide .item:nth-child(1) .content {
-  display: block;
+.item.prev-2 {
+    transform: translate(-50%, -50%) translateX(-450px) translateZ(-350px) rotateY(45deg) scale(0.8);
+    z-index: 1;
+    opacity: 0.4;
+}
+
+/*
+ * Tarjetas ocultas (fuera de la vista).
+ * Se escalan a 0 para que no sean visibles.
+ */
+.item.hide {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+}
+
+/*
+ * Overlay oscuro sobre las tarjetas para mejorar la legibilidad del texto.
+ * Se hace más sutil en la tarjeta activa.
+ */
+.item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.2));
+    border-radius: 20px;
+    transition: background 0.6s ease;
+}
+
+.item.active::before {
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+}
+
+/*
+ * Contenido de la tarjeta (título, descripción, botón).
+ * Inicialmente oculto y se muestra solo en la tarjeta activa.
+ */
+.content {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    right: 30px;
+    z-index: 1;
+    color: #fff;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease 0.3s, transform 0.5s ease 0.3s;
+}
+
+.item.active .content {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .content .name {
-  font-size: 2.5rem; /* 40px */
-  text-transform: uppercase;
-  font-weight: 800;
-  opacity: 0;
-  animation: animate 1s ease-in-out 1 forwards;
+    font-size: 2rem; /* 32px */
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 8px;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
 }
 
 .content .des {
-  margin-top: 10px;
-  margin-bottom: 20px;
-  font-size: 1.125rem; /* 18px */
-  color: #B8BBC6; /* brand-text-secondary */
-  opacity: 0;
-  animation: animate 1s ease-in-out 0.3s 1 forwards;
+    font-size: 1rem; /* 16px */
+    color: #f3f4f6; /* text-brand-text-primary */
+    margin-bottom: 16px;
 }
 
-.content button {
-  padding: 12px 24px;
-  border: none;
-  cursor: pointer;
-  opacity: 0;
-  animation: animate 1s ease-in-out 0.6s 1 forwards;
-  border-radius: 9999px;
-  font-weight: bold;
-  transition: all 0.3s;
+/*
+ * Botón de "Call to Action" (CTA).
+ * Estilo moderno y con efecto hover.
+ */
+.cta-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #F5B301; /* brand-accent-2 */
+    color: #0B0B0D; /* brand-bg */
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.3s;
 }
 
-@keyframes animate {
-  from {
-    opacity: 0;
-    transform: translate(0, 100px);
-    filter: blur(33px);
-  }
-  to {
-    opacity: 1;
-    transform: translate(0);
-    filter: blur(0);
-  }
+.cta-button:hover {
+    background-color: #ffc72e;
+    transform: scale(1.05);
 }
 
-.slider-button {
-  width: 100%;
-  text-align: center;
-  position: absolute;
-  bottom: 20px;
-  z-index: 10;
+/*
+ * Contenedor de los botones de navegación.
+ * Centrado en la parte inferior del slider.
+ */
+.slider-navigation {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    display: flex;
+    gap: 15px;
 }
 
-.slider-button button {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  background-color: rgba(17, 18, 23, 0.5); /* brand-surface-1 con opacidad */
-  backdrop-filter: blur(4px);
-  color: #F3F4F6;
-  cursor: pointer;
-  margin: 0 10px;
-  transition: 0.3s;
-  font-size: 1.2rem;
+.slider-navigation button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgba(17, 18, 23, 0.6); /* brand-surface-1 con opacidad */
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
 }
 
-.slider-button button:hover {
-  background: #F5B301; /* brand-accent-2 */
-  color: #0B0B0D; /* brand-bg */
-  border-color: #F5B301;
+.slider-navigation button:hover {
+    background-color: #F5B301; /* brand-accent-2 */
+    color: #0B0B0D; /* brand-bg */
+    border-color: #F5B301;
+    transform: scale(1.1);
+}
+
+/* --- Media Queries para Responsividad --- */
+
+/* Para tablets y pantallas más pequeñas */
+@media (max-width: 1024px) {
+    .slider-container {
+        height: 450px;
+        perspective: 1000px;
+    }
+
+    .item.active {
+        width: 500px;
+    }
+
+    .item.next {
+        transform: translate(-50%, -50%) translateX(200px) translateZ(-150px) rotateY(-35deg);
+    }
+
+    .item.prev {
+        transform: translate(-50%, -50%) translateX(-200px) translateZ(-150px) rotateY(35deg);
+    }
+
+    .item.next-2, .item.prev-2 {
+        display: none; /* Ocultamos la segunda tarjeta en cola para no saturar */
+    }
+}
+
+/* Para dispositivos móviles */
+@media (max-width: 767px) {
+    .slider-container {
+        height: 400px;
+        perspective: 800px; /* Reducimos la perspectiva para un efecto menos pronunciado */
+        margin: 20px auto;
+    }
+
+    .item {
+        width: 220px;
+        height: 320px;
+    }
+
+    .item.active {
+        width: 90vw; /* La tarjeta activa ocupa casi todo el ancho */
+        max-width: 300px;
+        height: 360px;
+    }
+
+    /* En móvil, las tarjetas en espera se posicionan más cerca y con menos rotación */
+    .item.next {
+        transform: translate(-50%, -50%) translateX(120px) translateZ(-100px) rotateY(-25deg);
+        opacity: 0.8;
+    }
+
+    .item.prev {
+        transform: translate(-50%, -50%) translateX(-120px) translateZ(-100px) rotateY(25deg);
+        opacity: 0.8;
+    }
+
+    .item.next-2, .item.prev-2 {
+        display: none; /* Confirmamos que no se vean en móvil */
+    }
+
+    .content {
+        bottom: 20px;
+        left: 20px;
+        right: 20px;
+    }
+
+    .content .name {
+        font-size: 1.5rem; /* 24px */
+    }
+
+    .content .des {
+        font-size: 0.875rem; /* 14px */
+        margin-bottom: 12px;
+    }
+
+    .cta-button {
+        padding: 8px 16px;
+        font-size: 0.875rem;
+    }
+
+    .slider-navigation {
+        bottom: 10px;
+        gap: 10px;
+    }
+
+    .slider-navigation button {
+        width: 45px;
+        height: 45px;
+        font-size: 18px;
+    }
 }
