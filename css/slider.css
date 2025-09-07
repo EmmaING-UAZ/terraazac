@@ -173,23 +173,23 @@
  */
 .glass-button {
     display: inline-block;
-    padding: 10px 24px;
-    background-color: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 50px;
-    color: #fff;
+    padding: 12px 28px; /* Aumentamos el padding para un botón más robusto */
+    background-color: rgba(255, 255, 255, 0.15); /* Un poco más visible */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Borde más definido */
+    border-radius: 50px; /* Asegura que sea completamente redondeado (píldora) */
+    color: #ffffff;
     text-decoration: none;
     font-weight: bold;
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px); /* Soporte para Safari */
+    backdrop-filter: blur(10px); /* Aumentamos el desenfoque para un mejor efecto */
+    -webkit-backdrop-filter: blur(10px); /* Soporte para Safari */
     transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
 }
 
 .glass-button:hover {
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.25); /* Hover más notorio */
     transform: scale(1.05);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
 }
 
 /*
@@ -223,9 +223,8 @@
 }
 
 .slider-navigation button:hover {
-    background-color: #F5B301; /* brand-accent-2 */
-    color: #0B0B0D; /* brand-bg */
-    border-color: #F5B301;
+    background-color: rgba(255, 255, 255, 0.2); /* Efecto hover transparente */
+    border-color: rgba(255, 255, 255, 0.3);
     transform: scale(1.1);
 }
 
@@ -310,7 +309,7 @@
     }
 
     .slider-navigation {
-        bottom: 5px; /* Bajamos un poco más los botones */
+        bottom: -15px; /* Posicionamos los botones debajo del slider */
         gap: 10px;
     }
 
