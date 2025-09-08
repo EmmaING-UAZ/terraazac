@@ -1,49 +1,52 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // 1. Lógica para el cambio de estilo del Header al hacer scroll
     const header = document.getElementById('main-header');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const scrollThreshold = 50;
+
+    // Función para manejar el estado visual del header
+    const handleHeaderStyle = () => {
+        if (!header) return;
+
+        const isMenuOpen = mobileMenu && !mobileMenu.classList.contains('hidden');
+
+        if (window.scrollY > scrollThreshold || isMenuOpen) {
+            header.classList.add('bg-brand-bg/70', 'backdrop-blur-lg', 'border-b', 'border-brand-border');
+        } else {
+            header.classList.remove('bg-brand-bg/70', 'backdrop-blur-lg', 'border-b', 'border-brand-border');
+        }
+    };
+
+    // 1. Lógica para el cambio de estilo del Header al hacer scroll
     if (header) {
-        const scrollThreshold = 50; // Píxeles para activar el cambio
-
-        const handleScroll = () => {
-            if (window.scrollY > scrollThreshold) {
-                // Añade clases para el fondo con blur y borde
-                header.classList.add('bg-brand-bg/70', 'backdrop-blur-lg', 'border-b', 'border-brand-border');
-            } else {
-                // Remueve las clases cuando está en la parte superior
-                header.classList.remove('bg-brand-bg/70', 'backdrop-blur-lg', 'border-b', 'border-brand-border');
-            }
-        };
-
-        window.addEventListener('scroll', handleScroll);
-        // Llama una vez al cargar por si la página se recarga en una posición scrolleada
-        handleScroll();
+        window.addEventListener('scroll', handleHeaderStyle);
+        // Llama una vez al cargar para establecer el estado inicial
+        handleHeaderStyle();
     }
 
     // 2. Lógica para el menú móvil (off-canvas)
     const mobileMenuButton = document.getElementById('mobile-menu-button');
     const closeMobileMenuButton = document.getElementById('close-mobile-menu-button');
-    const mobileMenu = document.getElementById('mobile-menu');
 
     if (mobileMenuButton && mobileMenu && closeMobileMenuButton) {
-        // Abrir menú
-        mobileMenuButton.addEventListener('click', () => {
+        const openMenu = () => {
             mobileMenu.classList.remove('hidden');
-            document.body.style.overflow = 'hidden'; // Evita el scroll del body cuando el menú está abierto
-        });
+            document.body.style.overflow = 'hidden';
+            handleHeaderStyle(); // Asegura que el header tenga fondo al abrir el menú
+        };
 
-        // Cerrar menú
-        closeMobileMenuButton.addEventListener('click', () => {
+        const closeMenu = () => {
             mobileMenu.classList.add('hidden');
-            document.body.style.overflow = ''; // Restaura el scroll del body
-        });
+            document.body.style.overflow = '';
+            handleHeaderStyle(); // Re-evalúa el estilo del header al cerrar
+        };
+
+        mobileMenuButton.addEventListener('click', openMenu);
+        closeMobileMenuButton.addEventListener('click', closeMenu);
 
         // Opcional: cerrar menú si se hace clic en un enlace
         mobileMenu.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-                document.body.style.overflow = '';
-            });
+            link.addEventListener('click', closeMenu);
         });
     }
 

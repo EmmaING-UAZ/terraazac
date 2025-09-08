@@ -67,6 +67,8 @@
 
     <!-- Estilos Globales Personalizados -->
     <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/video.css">
+    <link rel="stylesheet" href="css/lightbox.css">
 
 </head>
 <body class="bg-brand-bg text-brand-text-primary font-sans">
@@ -218,9 +220,17 @@
                     <h2 class="text-3xl md:text-4xl font-extrabold text-brand-text-primary">Galería Paquete 1</h2>
                 </div>
                 <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-                    <img src="assets/img/terraza-galeria-01.jpg" alt="Galería Terraza 1" class="rounded-lg object-cover w-full h-full aspect-square shadow-lg" loading="lazy" decoding="async">
-                    <img src="assets/img/terraza-galeria-02.jpg" alt="Galería Terraza 2" class="rounded-lg object-cover w-full h-full aspect-square shadow-lg" loading="lazy" decoding="async">
-                    <video class="rounded-lg" controls poster="assets/video-thumbs/v1.jpg" src="assets/videos/v1.mp4"></video>
+                    <img src="assets/img/terraza-galeria-01.jpg" alt="Galería Terraza 1" class="gallery-image rounded-lg object-cover w-full h-full aspect-square shadow-lg" loading="lazy" decoding="async">
+                    <img src="assets/img/terraza-galeria-02.jpg" alt="Galería Terraza 2" class="gallery-image rounded-lg object-cover w-full h-full aspect-square shadow-lg" loading="lazy" decoding="async">
+                    <!-- Video Personalizado 1 -->
+                    <div class="video-gallery-item">
+                        <img src="assets/video-thumbs/v1.jpg" alt="Miniatura de video" class="video-poster">
+                        <div class="video-overlay"></div>
+                        <button class="play-button" aria-label="Reproducir video">
+                            <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M8 5v14l11-7z"/></svg>
+                        </button>
+                        <video src="assets/videos/v1.mp4" preload="metadata"></video>
+                    </div>
                 </div>
             </div>
         </section>
@@ -231,9 +241,17 @@
                     <h2 class="text-3xl md:text-4xl font-extrabold text-brand-text-primary">Galería Paquete 2</h2>
                 </div>
                 <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-                    <img src="assets/img/terraza-galeria-03.jpg" alt="Galería Terraza 3" class="rounded-lg object-cover w-full h-full aspect-square shadow-lg" loading="lazy" decoding="async">
-                    <img src="assets/img/terraza-galeria-04.jpg" alt="Galería Terraza 4" class="rounded-lg object-cover w-full h-full aspect-square shadow-lg" loading="lazy" decoding="async">
-                    <video class="rounded-lg" controls poster="assets/video-thumbs/v2.jpg" src="assets/videos/v2.mp4"></video>
+                    <img src="assets/img/terraza-galeria-03.jpg" alt="Galería Terraza 3" class="gallery-image rounded-lg object-cover w-full h-full aspect-square shadow-lg" loading="lazy" decoding="async">
+                    <img src="assets/img/terraza-galeria-04.jpg" alt="Galería Terraza 4" class="gallery-image rounded-lg object-cover w-full h-full aspect-square shadow-lg" loading="lazy" decoding="async">
+                    <!-- Video Personalizado 2 -->
+                    <div class="video-gallery-item">
+                        <img src="assets/video-thumbs/v2.jpg" alt="Miniatura de video" class="video-poster">
+                        <div class="video-overlay"></div>
+                        <button class="play-button" aria-label="Reproducir video">
+                            <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M8 5v14l11-7z"/></svg>
+                        </button>
+                        <video src="assets/videos/v2.mp4" preload="metadata"></video>
+                    </div>
                 </div>
             </div>
         </section>
@@ -244,9 +262,17 @@
                     <h2 class="text-3xl md:text-4xl font-extrabold text-brand-text-primary">Galería Paquete 3</h2>
                 </div>
                 <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-                    <img src="assets/img/terraza-galeria-05.jpg" alt="Galería Terraza 5" class="rounded-lg object-cover w-full h-full aspect-square shadow-lg" loading="lazy" decoding="async">
-                    <img src="assets/img/terraza-galeria-06.jpg" alt="Galería Terraza 6" class="rounded-lg object-cover w-full h-full aspect-square shadow-lg" loading="lazy" decoding="async">
-                    <video class="rounded-lg" controls poster="assets/video-thumbs/v3.jpg" src="assets/videos/v3.mp4"></video>
+                    <img src="assets/img/terraza-galeria-05.jpg" alt="Galería Terraza 5" class="gallery-image rounded-lg object-cover w-full h-full aspect-square shadow-lg" loading="lazy" decoding="async">
+                    <img src="assets/img/terraza-galeria-06.jpg" alt="Galería Terraza 6" class="gallery-image rounded-lg object-cover w-full h-full aspect-square shadow-lg" loading="lazy" decoding="async">
+                    <!-- Video Personalizado 3 -->
+                    <div class="video-gallery-item">
+                        <img src="assets/video-thumbs/v3.jpg" alt="Miniatura de video" class="video-poster">
+                        <div class="video-overlay"></div>
+                        <button class="play-button" aria-label="Reproducir video">
+                            <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M8 5v14l11-7z"/></svg>
+                        </button>
+                        <video src="assets/videos/v3.mp4" preload="metadata"></video>
+                    </div>
                 </div>
             </div>
         </section>
@@ -300,7 +326,8 @@
     <!-- Scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="js/main.js" defer></script>
-    <!-- Otros scripts como video.js o form.js se añadirán en sus respectivas páginas -->
+     <script src="js/video.js" defer></script>
+     <script src="js/lightbox.js" defer></script>
 
 </body>
 </html>

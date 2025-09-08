@@ -137,4 +137,36 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- 5. INICIALIZACIÓN ---
     populatePlaylist();
+
+
+    // --- 6. LÓGICA PARA REPRODUCTORES DE VIDEO EN GALERÍAS ---
+    const videoItems = document.querySelectorAll('.video-gallery-item');
+
+    videoItems.forEach(item => {
+        const playButton = item.querySelector('.play-button');
+        const video = item.querySelector('video');
+
+        if (playButton && video) {
+            playButton.addEventListener('click', (e) => {
+                // Previene que el evento de clic se propague
+                e.stopPropagation();
+
+                // Añade la clase 'playing' al contenedor
+                item.classList.add('playing');
+
+                // Muestra los controles nativos del video
+                video.controls = true;
+
+                // Inicia la reproducción del video
+                video.play();
+            });
+
+            // Cuando el video termina, vuelve al estado inicial (poster)
+            video.addEventListener('ended', () => {
+                item.classList.remove('playing');
+                video.controls = false;
+                video.load(); // Carga de nuevo para mostrar el poster
+            });
+        }
+    });
 });
